@@ -1,0 +1,15 @@
+{
+    "builds": [
+      {
+        "src": "dist/**/*",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/hny2025/(.*)",
+        "dest": "/$1"
+      }
+    ]
+  }
+  
