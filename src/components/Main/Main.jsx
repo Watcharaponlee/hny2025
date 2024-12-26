@@ -14,7 +14,7 @@ import {
 import { motion } from "framer-motion";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { div } from "framer-motion/client";
-// import flowerImage from "/assets/flower1.png";
+import flowerImage from "/assets/flower1.png";
 
 const { Title } = Typography;
 
@@ -97,7 +97,7 @@ export default function Home() {
                     border: "3px solid #789DBC",
                   }}
                 >
-                  {/* <div
+                  <div
                     style={{
                       position: "fixed",
                       bottom: 0,
@@ -110,7 +110,7 @@ export default function Home() {
                       style={{ width: "300px", height: "300px" }}
                       preview={false}
                     />
-                  </div> */}
+                  </div>
                   <div
                     style={{
                       position: "fixed",
