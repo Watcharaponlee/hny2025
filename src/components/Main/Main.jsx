@@ -13,6 +13,7 @@ import {
 } from "antd";
 import { motion } from "framer-motion";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { div } from "framer-motion/client";
 
 const { Title } = Typography;
 
@@ -63,82 +64,108 @@ export default function Home() {
           }}
         >
           <div>
-            {!isOtpCorrect ? (
-              <Card
+            <div
+              style={{
+                position: "fixed",
+                top: 50,
+                left: "50%",
+                transform: "translateX(-50%)",
+                zIndex: 9999,
+                fontSize: "90px",
+                color: "#789DBC",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                width: "100vw",
+              }}
+            >
+              <span
                 style={{
-                  backgroundColor: "#FFE3E3",
-                  border: "3px solid #789DBC",
+                  display: "inline-block",
+                  animation: "scroll-left-to-right 10s linear infinite",
+                  alignContent: "center",
                 }}
               >
-                <div
+                ✨🎉 HAPPY NEW YEAR 2025 🎉✨
+              </span>
+            </div>
+            {!isOtpCorrect ? (
+              <>
+                <Card
                   style={{
-                    position: "fixed",
-                    bottom: 0,
-                    right: 0,
-                    zIndex: 9999,
+                    backgroundColor: "#FFE3E3",
+                    border: "3px solid #789DBC",
                   }}
                 >
-                  <Image
-                    src="./public/assets/flower1.png"
-                    style={{ width: "300px", height: "300px" }}
-                    preview={false}
-                  />
-                </div>
-                <div
-                  style={{
-                    position: "fixed",
-                    bottom: 0,
-                    left: 0,
-                    zIndex: 9999,
-                  }}
-                >
-                  <DotLottieReact
-                    src="https://lottie.host/d5ab246b-8080-47f5-9862-f3af8e918a15/VzbUA0aYG1.lottie"
-                    autoplay
-                    loop
-                    style={{ width: "300px", height: "300px" }}
-                  />
-                </div>
-                <Flex
-                  gap="middle"
-                  align="center"
-                  vertical
-                  style={{
-                    textAlign: "center",
-                  }}
-                >
-                  <Col>
-                    <Title
-                      style={{
-                        color: "#789DBC",
-                        marginTop: 0,
-                      }}
-                      level={1}
-                    >
-                      🔒 Please Input Password 🔒
-                    </Title>
-                  </Col>
-                  <Input.OTP
-                    mask="🔒"
-                    formatter={(str) => str.toUpperCase()}
-                    {...sharedProps}
-                  />
-                  <Button
+                  <div
                     style={{
-                      width: "120px",
-                      marginTop: "20px",
-                      color: "#C9E9D2",
-                      backgroundColor: "#789DBC",
-                      fontSize: "16px",
-                      fontWeight: "bold",
+                      position: "fixed",
+                      bottom: 0,
+                      right: 0,
+                      zIndex: 9999,
                     }}
-                    variant="solid"
-                    onClick={handleSubmit}
                   >
-                    Submit
-                  </Button>
-                </Flex>
-              </Card>
+                    <Image
+                      src="./public/assets/flower1.png"
+                      style={{ width: "300px", height: "300px" }}
+                      preview={false}
+                    />
+                  </div>
+                  <div
+                    style={{
+                      position: "fixed",
+                      bottom: 0,
+                      left: 0,
+                      zIndex: 9999,
+                    }}
+                  >
+                    <DotLottieReact
+                      src="https://lottie.host/d5ab246b-8080-47f5-9862-f3af8e918a15/VzbUA0aYG1.lottie"
+                      autoplay
+                      loop
+                      style={{ width: "300px", height: "300px" }}
+                    />
+                  </div>
+                  <Flex
+                    gap="middle"
+                    align="center"
+                    vertical
+                    style={{
+                      textAlign: "center",
+                    }}
+                  >
+                    <Col>
+                      <Title
+                        style={{
+                          color: "#789DBC",
+                          marginTop: 0,
+                        }}
+                        level={1}
+                      >
+                        🔒 Please Input Password 🔒
+                      </Title>
+                    </Col>
+                    <Input.OTP
+                      mask="🔒"
+                      formatter={(str) => str.toUpperCase()}
+                      {...sharedProps}
+                    />
+                    <Button
+                      style={{
+                        width: "120px",
+                        marginTop: "20px",
+                        color: "#C9E9D2",
+                        backgroundColor: "#789DBC",
+                        fontSize: "16px",
+                        fontWeight: "bold",
+                      }}
+                      variant="solid"
+                      onClick={handleSubmit}
+                    >
+                      Submit
+                    </Button>
+                  </Flex>
+                </Card>
+              </>
             ) : (
               <Card></Card>
             )}

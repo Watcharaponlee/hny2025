@@ -1,0 +1,8 @@
+@keyframes scroll-left-to-right {
+    0% {
+      transform: translateX(100%); /* เริ่มจากด้านซ้าย */
+    }
+    100% {
+      transform: translateX(-100%); /* เคลื่อนไปยังขวาสุด */
+    }
+  }
