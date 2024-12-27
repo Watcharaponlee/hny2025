@@ -557,7 +557,7 @@ export default function Home() {
                     span={24}
                     style={{
                       display: "flex",
-                      justifyContent: "end",
+                      justifyContent: "center",
                     }}
                   >
                     <Button
